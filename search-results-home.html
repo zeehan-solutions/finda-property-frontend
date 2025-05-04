@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+
+<head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- css file -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style3f56.css?v=11">
+<link rel="stylesheet" href="assets/css/responsive3f56.css?v=11">
+<title>Find a Property Search Results</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="images/favicon.png">
+
+<script>
+    function onlyNumberKey(evt) {
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        return !(ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57));
+    }
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+           <div class="preloader"></div>
+           <div class="top-header">
+              <div class="container p-md-0">
+                 <div class="row m-0">
+                    <div class="col-md-12 text-right">
+                       <div class="footer_social_widget">
+                          <p><a href="mailto:info@finda-property.com"><i class="fa fa-envelope"></i> info@finda-property.com</a></p>
+                          <ul>
+                             <li class="list-inline-item"><a target="_blank"
+                                href="#"><i
+                                class="fa fa-facebook"></i></a></li>
+                             <li class="list-inline-item"><a target="_blank"
+                                href="#"><i
+                                class="fa fa-linkedin-square"></i></a></li>
+                             <li class="list-inline-item"><a target="_blank"
+                                href="#"><i class="fa fa-instagram"></i></a></li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="mid-header header-nav menu_style_home_one style2 home10 navbar-scrolltofixed main-menu">
+              <div class="container p-md-0">
+                 <div class="row m-0">
+                    <div class="col-md-4 text-md-left text-center">
+                       <a href="index.html">
+                       <img class="nav_logo_img img-fluid" src="images/logo.png" alt="">
+                       </a>
+                    </div>
+                    <div class="col-md-8 text-right hide-mobile">
+                       <div
+                          class="header-contact-wrap navbar-expand-lg d-flex align-items-center justify-content-between pull-right">
+                          <div class="header-contact header-contact-1 d-flex align-items-center flex-fill">
+                          </div>
+                          <div class="header-contact header-contact-4 d-flex align-items-center">
+                          </div>
+                          <nav>
+                             <!-- Menu Toggle btn-->
+                             <div class="menu-toggle">
+                                <img class="nav_logo_img img-fluid" src="images/logo.png" alt="#">
+                                <button type="button" id="menu-btn">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                             </div>
+                             <ul id="respMenu" class="ace-responsive-menu text-left " data-menu-style="horizontal">
+                                <li><a href=index.html><span class="title">Home</span></a></li>
+                                <li>
+                                   <a ><span class="title">Buy</span></a>
+                                   <ul>
+                                      <li><a href="property-for-sale.html">Property for Sale</a></li>
+                                   </ul>
+                                </li>
+                                <li>
+                                   <a ><span class="title">Rent</span></a>
+                                   <ul>
+                                      <li><a href="property-for-rent.html">Property To Rent</a></li>
+                                   </ul>
+                                </li>
+                                <li><a href=off-plan.html><span class="title">Off Plan</span></a></li>
+                                <li>
+                                   <a ><span class="title">Services</span></a>
+                                   <ul>
+                                      <li><a href="mortgages1.html">Mortgages</a></li>
+                                      <li><a href="willsandPOA1.html">Wills and POA (Power of Attorney)</a></li>
+                                      <li><a href="creditfunding.html">Credit Funding</a></li>
+                                   </ul>
+                                </li>
+                                <li><a href=contactus.html><span class="title">Contact Us</span></a></li>
+                                <li><a href="login..html"><span>login</span></a></li>
+                                
+                             </ul>
+                          </nav>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           
+           </header>
+           <!-- Ace Responsive Menu -->
+           <div id="page" class="stylehome1 h0 header-responisve">
+              <div class="mobile-menu">
+                 <div class="header stylehome1 container">
+                    <div class="d-flex justify-content-between">
+                       <a class="mobile-menu-trigger" href="#menu">
+                       <i class="fa fa-bars"></i>
+                       </a>
+                       <a class="nav_logo_img " href="index.html"><img class="img-fluid pb6" src="images/logo.png"alt="Logo"></a>
+                       <!-- <a class="mobile-menu-reg-link" href="page-register.html"><span class="flaticon-user"></span></a> -->
+                    </div>
+                 </div>
+              </div>
+              <!-- /.mobile-menu -->
+              <nav id="menu" class="stylehome1">
+                 <ul>
+                    <li><a href=index.html><span class="title">Home</span></a></li>
+                    <li>
+                       <a ><span class="title">Buy</span></a>
+                       <ul>
+                          <li><a href="property-for-sale.html">Property for Sale</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                       <a ><span class="title">Rent</span></a>
+                       <ul>
+                          <li><a href="property-for-rent.html">Property To Rent</a></li>
+                       </ul>
+                    </li>
+                    <li><a href=off-plan.html><span class="title">Off Plan</span></a></li>
+                    <li>
+                       <a ><span class="title">Services</span></a>
+                       <ul>
+                          <li><a href="mortgages1.html">Mortgages</a></li>
+                          <li><a href="willsandPOA1.html">Wills and POA (Power of Attorney)</a></li>
+                          <li><a href="creditfunding.html">Credit Funding</a></li>
+                       </ul>
+                    </li>
+                    <li><a href=contactus.html><span class="title">Contact Us</span></a></li>
+                    <li><a href="login..html"><span>Login</span></a></li>
+                 </ul>
+              </nav>
+           </div>
+		 
+		 
+            <section id="desktop-header-search" class="advanced-search advanced-search-nav " data-hidden="0" data-sticky="0">
+        <div class="container cusatom-container">
+            <form class="houzez-search-form-js advanced-search-from" method="get" autocomplete="off"
+                  action="https://luxrealty.ae/search-results">
+                <input id="products-search-sort" type="hidden" name="sort" value="">
+                <input type="hidden" name="purpose" value="">
+                <input type="hidden" id="location_ref" name="location_ref" value="">
+                <div class="advanced-search-v1 ">
+                    <div class="d-flex flex-column flex-md-row">
+                        <div class="flex-search flex-grow-1">
+                            <div class="form-group">
+                                <select data-live-search="true" class="form-control selectpicker" name="location"
+                                        id="userlocation">
+                                                                            <option value="">Location</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="flex-search fields-width">
+                            <div class="form-group">
+                                <input maxlength="10" onkeypress="return onlyNumberKey(event)" name="min_area"
+                                       type="text" class="form-control"
+                                       value=""
+                                       placeholder="Min. Area">
+                            </div>
+                        </div>
+                        <div class="flex-search fields-width">
+                            <div class="form-group">
+                                <input maxlength="10" onkeypress="return onlyNumberKey(event)" name="max_area"
+                                       type="text" class="form-control"
+                                       value=""
+                                       placeholder="Max. Area">
+                            </div>
+                        </div>
+                        <div class="flex-search fields-width">
+                            <div class="form-group">
+                                <input maxlength="10" onkeypress="return onlyNumberKey(event)" name="min_price"
+                                       type="text" class="form-control"
+                                       value=""
+                                       placeholder="Min. Price">
+                            </div>
+                        </div>
+                        <div class="flex-search fields-width">
+                            <div class="form-group">
+                                <input maxlength="10" onkeypress="return onlyNumberKey(event)" name="max_price"
+                                       type="text" class="form-control"
+                                       value=""
+                                       placeholder="Max. Price">
+                            </div>
+                        </div>
+                        <div class="flex-search btn-no-right-padding">
+                            <button type="submit" class="btn btn-block form-control theme-btn-inverse ">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="our-listing pb30-991 pt10">
+        <div class="container cusatom-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="breadcrumb_content style2 mb0-991">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="theme-color" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active text-blank" aria-current="page">Search Results
+                            </li>
+                        </ol>
+                        <h2 class="breadcrumb_title">Search Results</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="listing_list_style mb20-xsd tal-991">
+                        <ul class="mb0">
+                            <li class="list-inline-item"><a style="display: block" id="showList"
+                                                            class="cursor-pointer"><span
+                                        class="fa fa-th-list"></span></a></li>
+                            <li class="list-inline-item"><a style="display: block" id="showGrid"
+                                                            class="cursor-pointer"><span class="fa fa-th-large"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="grid_list_search_result">
+                            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                <div class="left_area tac-xsd">
+                                    <p class="font-weight-bold">152 Results Found</p>
+                                </div>
+                            </div>
+                                                           
+								
+								
+								
+								<div class="col-sm-12 col-md-3 col-lg-4 col-xl-4">
+                                    <div class="right_area text-right tac-xsd">
+                                        <ul>
+                                            <li class="list-inline-item"><span class="shrtby">Listing Type:</span>
+                                                <select name="sort" class="selectpicker show-tick sortProducts">
+                                                    <option
+                                                        
+                                                        value="5">All Listings
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="4">Landloard Listings
+                                                    </option>
+
+                                                    <option
+                                                        
+                                                        value="1">Agent Listings
+                                                    </option>
+                                                    
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+								
+								 <div class="col-sm-12 col-md-3 col-lg-4 col-xl-4">
+                                    <div class="right_area text-right tac-xsd">
+                                        <ul>
+                                            <li class="list-inline-item"><span class="shrtby">Sort by:</span>
+                                                <select name="sort" class="selectpicker show-tick sortProducts">
+                                                    <option
+                                                        
+                                                        value="5">Date - New to Old
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="4">Date - Old to New
+                                                    </option>
+
+                                                    <option
+                                                        
+                                                        value="1">Price - Low to High
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="2">Price - High to Low
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="3">Featured Listings First
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="6">Title - ASC
+                                                    </option>
+                                                    <option
+                                                        
+                                                        value="7">Title - DESC
+                                                    </option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+								
+                                                    </div>
+                    </div>
+                    <div id="listV" class="row">
+                                                    <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                       <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                    <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                    <div class="col-lg-12 new-search-result">
+                                <div data-listing-id="ioo-472kpr"
+                                     data-listing-img="storage/listings/listing_674596288.jpg"
+                                     data-listing-price="4900000"
+                                     data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale"
+                                     class="feat_property feat_property_cus home7 style4 list">
+                                    <div class="thumb m-0">
+                                        <img class="img-whp view-property p-0"
+                                             src="storage/listings/listing_674596288.jpg"
+                                             alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                                        <div class="dtls_headr feature-tag">
+                                            <ul class="tag">
+                                                                                                    <li class="list-inline-item">High Demand</li>
+                                                                                                                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="details view-property">
+                                        <div class="view-property-inner">
+                                            <div class="d-flex flex-column">
+                                                <h4 class="font-weight-bold ">CORAL BEACH VILLA...</h4>
+                                                <span><b>Project:</b> Coral Beach Villas</span>
+                                                <span><b>Handover Date:</b> Q4 2028</span>
+                                                <span><b>Down Payment:</b>
+                                                    AED 10%
+                                                </span>
+                       
+                                                                                                    <p><span class="flaticon-placeholder"></span>
+                                                                                                        Sobha Siniya Island, Coral Beach Villas-Umm Al Quw...
+                                                    </p>
+                                                    <h4 style="color: #15959e; font-weight: bold;">AED 16,600,000</h4>
+                                                                                            </div>
+                                            <div class="dtls_headr">
+                                                                                                    <a class="fp_price">
+                                                       7245-9788  Sqft
+                                                                                                            </a>
+                                                                                            </div>
+                                        </div>
+                                        
+                                        <div class="fp_footer p-0">
+                                            <div class="fp_pdate float-right">
+                                                <a class="btn theme-btn-inverse cursor-pointer text-white">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                   
+                                                    
+                                                   
+                                                    
+                                                    
+                                            </div>
+                                            <div class="col-lg-12 mt20">
+                            <div class="text-center mt-3">
+                                <button class="btn theme-btn load-more-btn"
+                                        data-page="2">
+                                    Load More
+                                </button>
+                            </div>
+                        </div>
+                                    </div>
+
+
+
+
+
+                <div class="col-lg-4 col-xl-4">
+                    <div class="sidebar_listing_grid1 dn-991">
+                        <div class="sidebar_feature_listing">
+                            <h4 class="title">Recently Viewed</h4>
+                            <div id="recentlyViewedContainer"></div>
+                        </div>
+                        <div class="terms_condition_widget">
+                            <h4 class="title">Featured Properties</h4>
+                            <div class="sidebar_feature_property_slider">
+                                                                    <div class="item">
+                                        <div data-listing-id="zeq-3gtj"
+                                             data-listing-img="storage/listings/listing_947393366.jpg"
+                                             data-listing-price="1500000"
+                                             data-listing-title="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale"
+                                             class="feat_property feat_property_cus home7">
+                                            <div class="thumb view-property">
+                                                <img class="low-opacity img-whp"
+                                                     src="storage/listings/listing_947393366.jpg"
+                                                     alt="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                                <div class="thmb_cntnt">
+                                                    <ul class="tag mb0">
+                                                        <li class="list-inline-item">Featured</li>
+                                                    </ul>
+                                                    <a class="fp_price">AED
+                                                        1,500,000
+                                                                                                            </a>
+                                                    <address class="item-address">
+                                                        1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    <div class="item">
+                                        <div data-listing-id="xcd-46ffp"
+                                             data-listing-img="storage/listings/listing_117418539.jpg"
+                                             data-listing-price="3100000"
+                                             data-listing-title="LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI"
+                                             class="feat_property feat_property_cus home7">
+                                            <div class="thumb view-property">
+                                                <img class="low-opacity img-whp"
+                                                     src="storage/listings/listing_117418539.jpg"
+                                                     alt="LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI">
+                                                <div class="thmb_cntnt">
+                                                    <ul class="tag mb0">
+                                                        <li class="list-inline-item">Featured</li>
+                                                    </ul>
+                                                    <a class="fp_price">AED
+                                                        3,100,000
+                                                                                                            </a>
+                                                    <address class="item-address">
+                                                        LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    <div class="item">
+                                        <div data-listing-id="bli-49qtl"
+                                             data-listing-img="storage/listings/listing_929993638.jpg"
+                                             data-listing-price="2000000"
+                                             data-listing-title="LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI"
+                                             class="feat_property feat_property_cus home7">
+                                            <div class="thumb view-property">
+                                                <img class="low-opacity img-whp"
+                                                     src="storage/listings/listing_929993638.jpg"
+                                                     alt="LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI">
+                                                <div class="thmb_cntnt">
+                                                    <ul class="tag mb0">
+                                                        <li class="list-inline-item">Featured</li>
+                                                    </ul>
+                                                    <a class="fp_price">AED
+                                                        2,000,000
+                                                                                                            </a>
+                                                    <address class="item-address">
+                                                        LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    <div class="item">
+                                        <div data-listing-id="qtg-226kjf"
+                                             data-listing-img="storage/listings/listing_621267889.jpg"
+                                             data-listing-price="630000"
+                                             data-listing-title="1 Bed | 1 Bath | Vacant | Studio apartment for sale"
+                                             class="feat_property feat_property_cus home7">
+                                            <div class="thumb view-property">
+                                                <img class="low-opacity img-whp"
+                                                     src="storage/listings/listing_621267889.jpg"
+                                                     alt="1 Bed | 1 Bath | Vacant | Studio apartment for sale">
+                                                <div class="thmb_cntnt">
+                                                    <ul class="tag mb0">
+                                                        <li class="list-inline-item">Featured</li>
+                                                    </ul>
+                                                    <a class="fp_price">AED
+                                                        630,000
+                                                                                                            </a>
+                                                    <address class="item-address">
+                                                        1 Bed | 1 Bath | Vacant | Studio apartment for sale
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                        <div class="sidebar_feature_listing">
+                            <h4 class="title">Latest Posts</h4>
+                                                            <div class="media">
+                                    <img style="width: 30%" class="align-self-start mr-3"
+                                         src="storage/posts/post_600191181.webp" alt="Dubai Bayut Portal: The Leading Real Estate Platform in the UAE">
+                                    <div class="media-body">
+                                        <a href="post/dubai-bayut-portal-the-leading-real-estate-platform-in-the-uae.html">
+                                            <h5 class="mt-0 post_title">Dubai Bayut Portal: The Leading Real Estate Platform in the UAE</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="media">
+                                    <img style="width: 30%" class="align-self-start mr-3"
+                                         src="storage/posts/post_882142535.webp" alt="Is Dubai a Good Place to Invest in 2025?">
+                                    <div class="media-body">
+                                        <a href="post/is-dubai-a-good-place-to-invest-in-2025.html">
+                                            <h5 class="mt-0 post_title">Is Dubai a Good Place to Invest in 2025?</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="media">
+                                    <img style="width: 30%" class="align-self-start mr-3"
+                                         src="storage/posts/post_263571272.webp" alt="What are the best investment opportunities in Dubai right now?">
+                                    <div class="media-body">
+                                        <a href="post/what-are-the-best-investment-opportunities-in-dubai-right-now.html">
+                                            <h5 class="mt-0 post_title">What are the best investment opportunities in Dubai right now?</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="media">
+                                    <img style="width: 30%" class="align-self-start mr-3"
+                                         src="storage/posts/post_109197194.webp" alt="How Can Foreigners Invest in Dubai Real Estate Legally?">
+                                    <div class="media-body">
+                                        <a href="post/how-can-foreigners-invest-in-dubai-real-estate-legally.html">
+                                            <h5 class="mt-0 post_title">How Can Foreigners Invest in Dubai Real Estate Legally?</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="media">
+                                    <img style="width: 30%" class="align-self-start mr-3"
+                                         src="storage/posts/post_533799603.webp" alt="What is the Minimum Investment Required to Get a Dubai Golden Visa?">
+                                    <div class="media-body">
+                                        <a href="post/what-is-the-minimum-investment-required-to-get-a-dubai-golden-visa.html">
+                                            <h5 class="mt-0 post_title">What is the Minimum Investment Required to Get a Dubai Golden Visa?</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                 <section class="footer_one">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 col-lg-6 col-xl-3">
+                     <div class="footer_about_widget">
+                        <a href="index.html">
+                        <img class="img-fluid footer-logo" src="images/logo-white.png" alt="">
+                        </a>
+                        <br><br>
+                        <p> Search homes for sale in your local area by price, amenities, or other features. We’ll show you the sales history and provide helpful advice.</p>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-xl-3">
+                     <div class="footer_qlink_widget">
+                        <h4>Properties</h4>
+                        <ul class="list-unstyled">
+                           <li style="display: inline-block;margin-bottom: 15px" class="feat_property_cus"
+                              data-listing-id="ioo-472kpr"
+                              data-listing-img="storage/listings/listing_674596288.jpg"
+                              data-listing-price="4900000" data-listing-title="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                              <img class="pull-left" style="width:30%;margin-right: 10px;height: 80px;"
+                                 src="storage/listings/listing_674596288.jpg" alt="Elegant 2-Bedroom Apartment in Burj Khalifa for Sale">
+                              <a class="text-white view-property"
+                                 style="line-height: 1.2;cursor: pointer;float: right;width: 66%"><span>Elegant 2-Bedroom Apartment in Burj Khalifa for Sale</span>
+                              </a>
+                              <a class="text-white view-property" style="cursor: pointer;float: right;width: 66%">
+                              <span>AED 4,900,000</span>
+                              </a>
+                           </li>
+                           <li style="display: inline-block;margin-bottom: 15px" class="feat_property_cus"
+                              data-listing-id="gtr-471hbs"
+                              data-listing-img="storage/listings/listing_321829040.jpg"
+                              data-listing-price="10000000" data-listing-title="Ultra-Luxurious 4-Bedroom Apartment in Burj Khalifa For Sale">
+                              <img class="pull-left" style="width:30%;margin-right: 10px;height: 80px;"
+                                 src="storage/listings/listing_321829040.jpg" alt="Ultra-Luxurious 4-Bedroom Apartment in Burj Khalifa For Sale">
+                              <a class="text-white view-property"
+                                 style="line-height: 1.2;cursor: pointer;float: right;width: 66%"><span>Ultra-Luxurious 4-Bedroom Apartment in Burj Khalifa For Sale</span>
+                              </a>
+                              <a class="text-white view-property" style="cursor: pointer;float: right;width: 66%">
+                              <span>AED 10,000,000</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-xl-3">
+                     <div class="footer_contact_widget">
+                        <h4>Contact Us</h4>
+                        <ul class="list-unstyled">
+                           <li><a href="mailto:support@finda-property.com"><i class="fa fa-envelope-o"></i> support@finda-property.com</a></li>
+                           <li><a href="mailto:info@finda-property.com"><i class="fa fa-envelope-o"></i> info@finda-property.com</a>
+                           </li>
+                        </ul>
+                        <h4>Landlord Support</h4>
+                        <ul class="list-unstyled">
+                           <li><a href="mailto:supportforlanloard@finda-property.com"><i class="fa fa-envelope-o"></i> supportforlanloard@finda-property.com</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-xl-3">
+                     <div class="footer_qlink_widget">
+                        <h4>Discover More</h4>
+                        <ul class="list-unstyled">
+                           <li><a href="search-results88dd.html?city=dubai"><i class="fa fa-angle-right"></i>
+                              Dubai</a>
+                           </li>
+                           <li><a href="search-results4e72.html?city=sharjah"><i class="fa fa-angle-right"></i>
+                              Sharjah</a>
+                           </li>
+                           <li><a href="search-resultsec5e.html?city=abu-dhabi"><i class="fa fa-angle-right"></i>
+                              Abu Dhabi</a>
+                           </li>
+                           <li><a href="search-results3289.html?city=ajman"><i class="fa fa-angle-right"></i>
+                              Ajman</a>
+                           </li>
+                           <li><a href="search-resultsa247.html?city=ras-al-khaimah"><i class="fa fa-angle-right"></i>
+                              Ras al Khaimah</a>
+                           </li>
+                           <li><a href="search-resultsed2d.html?city=umm-al-quwain"><i class="fa fa-angle-right"></i>
+                              Umm Al Quwain</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Our Footer Bottom Area -->
+         <section class="footer_middle_area pt40 pb40 nm">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="copyright-widget text-center">
+                        <p>© Find a Property | The Landlord's Portal - All rights reserved</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+<a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
+
+    </div>
+        <script>window.APP_URL = 'index.html';</script>
+<script type="text/javascript" src="assets/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mmenu.all.js"></script>
+<script type="text/javascript" src="assets/js/ace-responsive-menu.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="assets/js/ajax-bs.js"></script>
+<script type="text/javascript" src="assets/js/isotop.js"></script>
+<script type="text/javascript" src="assets/js/snackbar.min.js"></script>
+<script type="text/javascript" src="assets/js/simplebar.js"></script>
+<script type="text/javascript" src="assets/js/parallax.js"></script>
+<script type="text/javascript" src="assets/js/scrollto.js"></script>
+<script type="text/javascript" src="assets/js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.counterup.js"></script>
+<script type="text/javascript" src="assets/js/wow.min.js"></script>
+<script type="text/javascript" src="assets/js/progressbar.js"></script>
+<script type="text/javascript" src="assets/js/slider.js"></script>
+<script type="text/javascript" src="assets/js/timepicker.js"></script>
+<!-- Custom script for all pages -->
+<script type="text/javascript" src="assets/js/script3860.js?v=1"></script>
+<script type="text/javascript" src="assets/js/listings.js"></script>        <script>
+        $(document).on('click', '.load-more-btn', function () {
+            var button = $(this);
+            var page = button.data('page');
+            const currentUrl = window.location.href;
+            const urlParams = new URLSearchParams(new URL(currentUrl.html).search);
+            const params = {page: page};
+            urlParams.forEach((value, key) => {
+                params[key] = value;
+            });
+            $.ajax({
+                url: "https://luxrealty.ae/api/load-more-listings-inner",
+                type: "GET",
+                data: params,
+                beforeSend: function () {
+                    button.text('Loading...');
+                    button.addClass('section-disabled');
+                },
+                success: function (response) {
+                    if ($.trim(response)) {
+                        $('#listV').append(response.list);
+                        $('#gridV').append(response.grid);
+                        button.data('page', page + 1);
+                        button.text('Load More');
+                        button.removeClass('section-disabled');
+                        if (!response.hasMore) {
+                            button.hide();
+                        }
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText); // Log the error
+                    button.text('Load More');
+                    button.removeClass('section-disabled');
+                    alert('Something went wrong. Please try again.');
+                }
+            });
+        });
+    </script>
+    <script>
+        $('body').on('change', '.sortProducts', function (e) {
+            let selectedValue = e.target.value;
+            let currentUrl = new URL(window.location.html);
+            currentUrl.searchParams.set('sort', selectedValue);
+            window.location.href = currentUrl;
+        });
+        $('body').on('click', '#showList', function () {
+            $("#listV").show();
+            $("#gridV").hide();
+        });
+        $('body').on('click', '#showGrid', function () {
+            $("#gridV").show();
+            $("#listV").hide();
+        });
+    </script>
+</body>
+
+
+</html>
