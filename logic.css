@@ -30,7 +30,7 @@
     
 }
 .authform-container.authform-active {
-  height: 668px; /* Height for sign-up */
+  height: 900px; /* Height for sign-up */
 }
 
 .authform-card {
@@ -147,3 +147,32 @@ h2::after {
 .authform-switch-form a:hover {
     text-decoration: underline;
 }
+
+
+  .file-input {
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    
+  }
+  .placeholder {
+    width: 100%;
+    padding: 10px;
+  
+    outline: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+ 

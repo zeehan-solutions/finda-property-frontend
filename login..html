@@ -186,12 +186,39 @@
                         <div class="authform-input-group">
                             <input type="password" placeholder="Confirm Password" required>
                         </div>
+                        <div class="authform-input-group">
+                           <input type="file" class="file-input" id="fileUpload">
+                           <div class="placeholder" id="placeholderText">Emirate Id Front</div>
+                         </div>
+
+                         <div class="authform-input-group">
+                           <input type="file" class="file-input" id="fileUpload">
+                           <div class="placeholder" id="placeholderText">Emirate Id Back</div>
+                         </div>
+                         <div class="authform-input-group">
+                           <input type="file" class="file-input" id="fileUpload">
+                           <div class="placeholder" id="placeholderText">Broker Card</div>
+                         </div>
+
                         <button type="button" class="authform-button" id="authform-register-btn">Register</button>
                         <p class="authform-switch-form">Already have an account? <a href="#" id="authform-to-login">Sign In</a></p>
                     </form>
                 </div>
             </div>
         </div>
+
+        <script>
+         const fileInput = document.getElementById('fileUpload');
+         const placeholder = document.getElementById('placeholderText');
+         fileInput.addEventListener('change', function () {
+           if (fileInput.files.length > 0) {
+             placeholder.textContent = fileInput.files[0].name;
+           } else {
+             placeholder.textContent = 'Upload your profile';
+           }
+         });
+       </script>
+     
         <!-- Library js -->
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
   <script>
