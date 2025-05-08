@@ -11,6 +11,11 @@
       <title>Find a Property</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="images/fav.png">
+      <style>
+        .Residential_form_tabs button.active{
+           color: #328f95 !important;
+        }
+     </style>
 <script>
     function onlyNumberKey(evt) {
         var ASCIICode = (evt.which) ? evt.which : evt.keyCode
@@ -150,447 +155,481 @@
               </nav>
            </div>
 
-            <div class="home10-mainslider">
-    <div class="container-fluid p0">
-        <div class="row m-0">
-            <div class="col-lg-12 p-0">
-                <div class="main-banner-wrapper home10">
-                    <div class="banner-style-one owl-theme owl-carousel">
-                        <div class="slide slide-one"
-                            style="background-image: url(assets/images/home/banner.webp);height: 600px;" alt="Buy and Rent Property in Dubai | Lux Realty LLC">
-                            <div class="">
-                                <div class="container">
+  
+           <div class="home10-mainslider">
+            <div class="container-fluid p0">
+               <div class="row m-0">
+                  <div class="col-lg-12 p-0">
+                     <div class="main-banner-wrapper home10">
+                        <div class="banner-style-one owl-theme owl-carousel">
+                           <div class="slide slide-one"
+                              style="background-image: url(assets/images/home/banner.webp);height: 600px;"
+                              alt="">
+                              <div class="">
+                                 <div class="container-md">
                                     <div class="row">
-                                        <div class="col-lg-12 text-center p0">
-                                            <h1 class="banner-title">Properties To Rent
-                                            </h1>
-                                            <h2 class="banner_top_title">Our real estate company has exclusive for rent listings that are perfect for international clients.</h2>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="bayut_form_container">
-                                                <form action="https://luxrealty.ae/search-results" method="get">
-                                                    <input type="hidden" name="purpose" value="Buy"
-                                                        id="s_purpose">
-                                                    <input type="hidden" name="completion_status"
-                                                        id="s_completion_status">
-                                                    <input type="hidden" name="rent_frequency" id="s_rent_frequency">
-                                                    <input type="hidden" name="cheque" id="s_cheque">
-                                                    <input type="hidden" name="development_status"
-                                                        id="s_development_status">
-                                                    <input type="hidden" name="sale_status" id="s_sale_status">
-                                                    <div class="bayut_row_one">
-                                                        <div class="rent_one_parant section-disabled">
-                                                            <div class="form_rent">
-                                                                <div class="dclick" id="purposeMain">
-                                                                    <h3 id="purposeMainTitle">Buy</h3>
-                                                                    <span><svg xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 12 6"
-                                                                            class="eedc221b FilterDesign2022">
-                                                                            <path class="cls-1" d="M12 6L6 0 0 6h12z">
-                                                                            </path>
-                                                                        </svg></span>
-                                                                </div>
-
-                                                                <div class="rent_form_content dclick_content">
-                                                                    <div>
-                                                                        <div class="rent_form_title">
-                                                                            <h4 class="form_title">Purpose</h4>
-                                                                            <div class="rent_form_tabs">
-                                                                                                                                                                    <button type="button"
-                                                                                        id="x-buy">Buy</button>
-                                                                                                                                                                    <button type="button"
-                                                                                        id="x-rent">Rent</button>
-                                                                                                                                                            </div>
-                                                                            <div id="completion_st"
-                                                                                style="display:none;">
-                                                                                <h4 class="form_title">Completion Status
-                                                                                </h4>
-                                                                                <div id="xcompletion_status"
-                                                                                    class="rent_fq_form_tabs buy_fq_form_tabs all_tabs">
-                                                                                    <button type="button"
-                                                                                        class="completionStatusBtn">All</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="completionStatusBtn">Ready</button>
-                                                                                                                                                                    </div>
-                                                                            </div>
-
-                                                                            <div id="rentfr_st" style="display: none;">
-                                                                                <h4 class="form_title">Rent Frequency
-                                                                                </h4>
-
-                                                                                <div class="rent_fq_form_tabs all_tabs">
-                                                                                    <button type="button"
-                                                                                        class="rentFrequencyBtn">All</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="rentFrequencyBtn">Yearly</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="rentFrequencyBtn">Monthly</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="rentFrequencyBtn">Weekly</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="rentFrequencyBtn">Daily</button>
-                                                                                                                                                                    </div>
-                                                                                <div id="Cheque">
-                                                                                    <h4 class="form_title">Cheque's</h4>
-
-                                                                                    <div
-                                                                                        class="cheque_fq_form_tabs all_tabs">
-                                                                                        <button type="button"
-                                                                                            class="chequeBtn">All</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">1 cheque</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">2 cheques</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">3 cheques</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">4 cheques</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">6 cheques</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="chequeBtn">12 cheques</button>
-                                                                                                                                                                            </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div id="development_st"
-                                                                                style="display: none;">
-                                                                                <h4 class="form_title">Development
-                                                                                    status
-                                                                                </h4>
-
-                                                                                <div id="dev_st"
-                                                                                    class="development_form_tabs all_tabs">
-                                                                                    <button type="button"
-                                                                                        class="developmentStatusBtn">All</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="developmentStatusBtn">Planned</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="developmentStatusBtn">Construction</button>
-                                                                                                                                                                            <button type="button"
-                                                                                            class="developmentStatusBtn">Completed</button>
-                                                                                                                                                                    </div>
-
-                                                                                <div id="sale_st">
-                                                                                    <h4 class="form_title">Sale Status
-                                                                                    </h4>
-
-                                                                                    <div id="sa_st"
-                                                                                        class="sale_st_form_tabs all_tabs">
-                                                                                        <button type="button"
-                                                                                            class="saleStatusBtn">All</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="saleStatusBtn">Future Launch</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="saleStatusBtn">Newly Launched</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="saleStatusBtn">High Demand</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="saleStatusBtn">Last units</button>
-                                                                                                                                                                                    <button type="button"
-                                                                                                class="saleStatusBtn">Out of stock - Sold out</button>
-                                                                                                                                                                            </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="reset_form_tabs">
-                                                                                <span class="dmreset"><button
-                                                                                        type="button" id="reset_purpse"
-                                                                                        aria-label="Buy">Reset</button></span>
-                                                                                <span class="dmdone"><button
-                                                                                        type="button"
-                                                                                        id="done_purpse"
-                                                                                        class="active"
-                                                                                        aria-label="Buy">Done</button></span>
-                                                                            </div>
+                                       <div class="col-lg-12 text-center p0">
+                                          <h1 class="banner-title">Property To Rent
+                                        </h1>
+                                          <h2 class="banner_top_title">Our real estate company has exclusive for sale listings that are perfect for international <br>clients.</h2>
+                                       </div>
+                                       <div class="col-lg-12">
+                                          <div class="bayut_form_container">
+                                             <form action="" method="get">
+                                                <input type="hidden" name="purpose" id="s_purpose">
+                                                <input type="hidden" name="completion_status"
+                                                   id="s_completion_status">
+                                                <input type="hidden" name="rent_frequency" id="s_rent_frequency">
+                                                <input type="hidden" name="cheque" id="s_cheque">
+                                                <input type="hidden" name="development_status"
+                                                   id="s_development_status">
+                                                <input type="hidden" name="sale_status" id="s_sale_status">
+                                                <div class="bayut_row_one">
+                                                   <div class="rent_one_parant">
+                                                      <div class="form_rent">
+                                                         <div class="dclick" id="purposeMain">
+                                                            <h3 id="purposeMainTitle">Purpose</h3>
+                                                            <span>
+                                                               <svg
+                                                                  xmlns="http://www.w3.org/2000/svg"
+                                                                  viewBox="0 0 12 6"
+                                                                  class="eedc221b FilterDesign2022">
+                                                                  <path class="cls-1" d="M12 6L6 0 0 6h12z">
+                                                                  </path>
+                                                               </svg>
+                                                            </span>
+                                                         </div>
+                                                         <div class="rent_form_content dclick_content">
+                                                            <div>
+                                                               <div class="rent_form_title">
+                                                                  <h4 class="form_title">Purpose</h4>
+                                                                  <div class="rent_form_tabs">
+                                                                     <button type="button"
+                                                                        id="x-buy">Buy</button>
+                                                                     <button type="button"
+                                                                        id="x-rent">Rent</button>
+                                                                     <button type="button"
+                                                                        id="x-off-plan-resale">Off Plan-Resale</button>
+                                                                  </div>
+                                                                  <div id="completion_st"
+                                                                     style="display:none;">
+                                                                     <h4 class="form_title">Completion Status
+                                                                     </h4>
+                                                                     <div id="xcompletion_status"
+                                                                        class="rent_fq_form_tabs buy_fq_form_tabs all_tabs">
+                                                                        <button type="button"
+                                                                           class="completionStatusBtn">
+                                                                        All
+                                                                        </button>
+                                                                        <button type="button"
+                                                                           class="completionStatusBtn">Ready</button>
+                                                                        <a href="off-plan.html"
+                                                                           class="completionStatusBtn cus-cs-btn">Off
+                                                                        Plan</a>
+                                                                        <a href="offplan-search-results.html"
+                                                                           class="completionStatusBtn cus-cs-btn">All
+                                                                        Off Plan</a>
+                                                                     </div>
+                                                                  </div>
+                                                                  <div id="rentfr_st" style="display: none;">
+                                                                     <h4 class="form_title">Rent Frequency
+                                                                     </h4>
+                                                                     <div class="rent_fq_form_tabs all_tabs">
+                                                                        <button type="button"
+                                                                           class="rentFrequencyBtn">All
+                                                                        </button>
+                                                                        <button type="button"
+                                                                           class="rentFrequencyBtn">Yearly</button>
+                                                                        <button type="button"
+                                                                           class="rentFrequencyBtn">Monthly</button>
+                                                                        <button type="button"
+                                                                           class="rentFrequencyBtn">Weekly</button>
+                                                                        <button type="button"
+                                                                           class="rentFrequencyBtn">Daily</button>
+                                                                     </div>
+                                                                     <div id="Cheque">
+                                                                        <h4 class="form_title">Cheque's</h4>
+                                                                        <div
+                                                                           class="cheque_fq_form_tabs all_tabs">
+                                                                           <button type="button"
+                                                                              class="chequeBtn">All
+                                                                           </button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">1 cheque</button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">2 cheques</button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">3 cheques</button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">4 cheques</button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">6 cheques</button>
+                                                                           <button type="button"
+                                                                              class="chequeBtn">12 cheques</button>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="Location_two_parant">
-                                                            <input type="hidden" name="location_ref"
-                                                                id="location_ref">
-                                                            <div class="dclick" id="locationMain">
-                                                                <select data-live-search="true"
-                                                                    class="inputlocation selectpicker" name="location"
-                                                                    id="userlocation">
-                                                                    <option value="">Location</option>
-                                                                                                                                    </select><span><svg xmlns="http://www.w3.org/2000/svg"
-                                                                        fill="#767676" viewBox="0 0 16 17">
-                                                                        <path
-                                                                            d="M8 1.83A4.67 4.67 0 003.33 6.5c0 2.78 2.95 6.61 4.16 8.07a.66.66 0 001.02 0c1.21-1.46 4.16-5.29 4.16-8.07A4.67 4.67 0 008 1.83zm0 6.34a1.67 1.67 0 110-3.34 1.67 1.67 0 010 3.34z">
-                                                                        </path>
-                                                                    </svg></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div
-                                                            class="rasi_three_parant ">
-                                                            <div class="dclick" id="typeMain">
-                                                                <h3 id="typeMainTitle">Type</h3>
-                                                                <span><svg xmlns="http://www.w3.org/2000/svg"
-                                                                        viewBox="0 0 12 6"
-                                                                        class="eedc221b FilterDesign2022">
-                                                                        <path class="cls-1" d="M12 6L6 0 0 6h12z">
-                                                                        </path>
-                                                                    </svg></span>
-                                                            </div>
-
-                                                            <div class="type_form_content dclick_content">
-                                                                <input type="hidden" value=""
-                                                                    name="property_type" id="s_property_type">
-                                                                <div>
-                                                                    <div class="Residential_form_tabs">
-                                                                                                                                                    <button type="button"
-                                                                                id="x-residential">Residential</button>
-                                                                                                                                                    <button type="button"
-                                                                                id="x-commercial">Commercial</button>
-                                                                                                                                            </div>
-
-                                                                    <div id="res_child" style="display:none;"
-                                                                        class="Residential_fq_form_tabs1 all_tabs">
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Room</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Roomshare-Bed-space</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Partitioned-Room</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Apartment</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Townhouse</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Villa-Compound</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Residential-Plot</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Residential-Building</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Villa</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Penthouse</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Hotel-Apartment</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Residential-Floor</button>
-                                                                                                                                            </div>
-
-                                                                    <div id="comm_child" style="display:none;"
-                                                                        class="Commercial_fq_form_tabs1 all_tabs">
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Office</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Warehouse</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Commercial-Villa</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Commercial-Plot</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Commercial-Building</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Industrial-Land</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Showroom</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Shop</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Labour-Camp</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Bulk-Unit</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Commercial-Floor</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Factory</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Mixed-Use-Land</button>
-                                                                                                                                                    <button class="propertyTypeBtn"
-                                                                                type="button">Other Commercial</button>
-                                                                                                                                            </div>
-
-                                                                    <div class="reset_form_tabs">
-                                                                        <button type="button" id="reset_pt"
-                                                                            aria-label="Reset">Reset</button>
-                                                                        <button type="button" id="done_pt"
-                                                                            class="active"
-                                                                            aria-label="Done">Done</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="bayut_row_two">
-                                                        <div
-                                                            class="beds_baths_one_parant ">
-                                                            <div class="form_rent">
-                                                                <div class="dclick" id="bedsMain">
-                                                                    <h3><span id="bedsMainTitle">Beds</span> &amp;
-                                                                        <span id="bathsMainTitle">Baths</span>
-                                                                    </h3> <span><svg xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 12 6"
-                                                                            class="eedc221b FilterDesign2022">
-                                                                            <path class="cls-1" d="M12 6L6 0 0 6h12z">
-                                                                            </path>
-                                                                        </svg></span>
-                                                                </div>
-
-                                                                <div
-                                                                    class="beds_form_content bedzbaths dclick_content">
-                                                                    <input type="hidden" name="beds"
-                                                                        id="s_beds">
-                                                                    <input type="hidden" name="baths"
-                                                                        id="s_baths">
-                                                                    <div>
-                                                                        <div class="beds_form_title">
-                                                                            <h4 class="form_title">Beds</h4>
-                                                                            <div id="Beds"
-                                                                                class="Beds_fq_form_tabs all_tabs">
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">Studio</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">1</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">2</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">3</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">4</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">5</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">6</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">7</button>
-                                                                                <button class="bedsBtn"
-                                                                                    type="button">8+</button>
-                                                                            </div>
-
-                                                                            <h4 class="form_title">Baths</h4>
-
-                                                                            <div id="Baths"
-                                                                                class="Baths_fq_form_tabs all_tabs">
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">1</button>
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">2</button>
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">3</button>
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">4</button>
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">5</button>
-                                                                                <button class="bathsBtn"
-                                                                                    type="button">6+</button>
-                                                                            </div>
-
-                                                                            <div class="reset_form_tabs">
-                                                                                <button type="button" id="reset_beds"
-                                                                                    aria-label="Reset">Reset</button>
-                                                                                <button type="button" id="done_beds"
-                                                                                    class="active"
-                                                                                    aria-label="Done">Done</button>
-                                                                            </div>
+                                                                     </div>
+                                                                  </div>
+                                                                  <div id="development_st"
+                                                                     style="display: none;">
+                                                                     <h4 class="form_title">Development
+                                                                        status
+                                                                     </h4>
+                                                                     <div id="dev_st"
+                                                                        class="development_form_tabs all_tabs">
+                                                                        <button type="button"
+                                                                           class="developmentStatusBtn">
+                                                                        All
+                                                                        </button>
+                                                                        <button type="button"
+                                                                           class="developmentStatusBtn">Planned</button>
+                                                                        <button type="button"
+                                                                           class="developmentStatusBtn">Construction</button>
+                                                                        <button type="button"
+                                                                           class="developmentStatusBtn">Completed</button>
+                                                                     </div>
+                                                                     <div id="sale_st">
+                                                                        <h4 class="form_title">Sale Status
+                                                                        </h4>
+                                                                        <div id="sa_st"
+                                                                           class="sale_st_form_tabs all_tabs">
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">
+                                                                           All
+                                                                           </button>
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">Future Launch</button>
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">Newly Launched</button>
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">High Demand</button>
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">Last units</button>
+                                                                           <button type="button"
+                                                                              class="saleStatusBtn">Out of stock - Sold out</button>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
+                                                                     </div>
+                                                                  </div>
+                                                                  <div class="reset_form_tabs">
+                                                                     <span class="dmreset"><button
+                                                                        type="button" id="reset_purpse"
+                                                                        aria-label="Buy">Reset</button></span>
+                                                                     <span class="dmdone"><button
+                                                                        type="button"
+                                                                        id="done_purpse"
+                                                                        class="active"
+                                                                        aria-label="Buy">Done</button></span>
+                                                                  </div>
+                                                               </div>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="area_two_parant">
-                                                            <div class="dclick" id="areaMain">
-                                                                <h3 id="areaMainTitle">Area(sqft)</h3> <span><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        viewBox="0 0 12 6"
-                                                                        class="eedc221b FilterDesign2022">
-                                                                        <path class="cls-1" d="M12 6L6 0 0 6h12z">
-                                                                        </path>
-                                                                    </svg></span>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="Location_two_parant">
+                                                      <input type="hidden" name="location_ref"
+                                                         id="location_ref">
+                                                      <div class="dclick" id="locationMain">
+                                                         <select name="location" id="userlocation"
+                                                            class="inputlocation selectpicker w100"
+                                                            data-size="10" data-live-search="true"
+                                                            data-width="100%">
+                                                            <option value="">Location</option>
+                                                         </select>
+                                                         <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                               fill="#767676" viewBox="0 0 16 17">
+                                                               <path
+                                                                  d="M8 1.83A4.67 4.67 0 003.33 6.5c0 2.78 2.95 6.61 4.16 8.07a.66.66 0 001.02 0c1.21-1.46 4.16-5.29 4.16-8.07A4.67 4.67 0 008 1.83zm0 6.34a1.67 1.67 0 110-3.34 1.67 1.67 0 010 3.34z">
+                                                               </path>
+                                                            </svg>
+                                                         </span>
+                                                      </div>
+                                                   </div>
+                                                   <div class="rasi_three_parant">
+                                                      <div class="dclick" id="typeMain">
+                                                         <h3 id="typeMainTitle">Type</h3>
+                                                         <span>
+                                                            <svg
+                                                               xmlns="http://www.w3.org/2000/svg"
+                                                               viewBox="0 0 12 6"
+                                                               class="eedc221b FilterDesign2022">
+                                                               <path class="cls-1" d="M12 6L6 0 0 6h12z">
+                                                               </path>
+                                                            </svg>
+                                                         </span>
+                                                      </div>
+                                                      <div class="type_form_content dclick_content">
+                                                         <input type="hidden" name="property_type"
+                                                            id="s_property_type">
+                                                         <div>
+                                                            <div class="Residential_form_tabs">
+                                                               <button type="button"
+                                                                  id="x-residential">Residential</button>
+                                                               <button type="button"
+                                                                  id="x-commercial">Commercial</button>
                                                             </div>
-
-                                                            <div class="area_form_content dclick_content ">
-                                                                <div>
-                                                                    <h4>Minimum sqft</h4>
-                                                                    <input onkeypress="return onlyNumberKey(event)"
-                                                                        type="text" maxlength="5" name="min_area"
-                                                                        class="all_tabs" id="minimumsqft"
-                                                                        placeholder="Minimum sqft">
-                                                                </div>
-                                                                <div>
-                                                                    <h4>Maximum sqft</h4>
-                                                                    <input onkeypress="return onlyNumberKey(event)"
-                                                                        type="text" maxlength="5" name="max_area"
-                                                                        class="all_tabs" id="maximum_sqft"
-                                                                        placeholder="Maximum sqft">
-                                                                </div>
-                                                                <div class="reset_form_tabs reset_form_tabs_area">
-                                                                    <button type="button" id="reset_area"
-                                                                        aria-label="Reset">Reset</button>
-                                                                    <button type="button" id="done_area"
-                                                                        class="active" aria-label="Done">Done</button>
-                                                                </div>
+                                                            <div id="res_child" style="display:none;"
+                                                               class="Residential_fq_form_tabs1 all_tabs">
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Room</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Roomshare-Bed-space</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Partitioned-Room</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Apartment</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Townhouse</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Villa-Compound</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Residential-Plot</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Residential-Building</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Villa</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Penthouse</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Hotel-Apartment</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Residential-Floor</button>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="area_three_parant">
-                                                            <div class="dclick" id="priceMain">
-                                                                <h3 id="priceMainTitle">Price (AED)</h3> <span><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        viewBox="0 0 12 6"
-                                                                        class="eedc221b FilterDesign2022">
-                                                                        <path class="cls-1" d="M12 6L6 0 0 6h12z">
-                                                                        </path>
-                                                                    </svg></span>
+                                                            <div id="comm_child" style="display:none;"
+                                                               class="Commercial_fq_form_tabs1 all_tabs">
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Office</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Warehouse</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Commercial-Villa</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Commercial-Plot</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Commercial-Building</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Industrial-Land</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Showroom</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Shop</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Labour-Camp</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Bulk-Unit</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Commercial-Floor</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Factory</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Mixed-Use-Land</button>
+                                                               <button class="propertyTypeBtn"
+                                                                  type="button">Other Commercial</button>
                                                             </div>
-                                                            <div class="price_form_content dclick_content">
-                                                                <div>
-                                                                    <h4>Minimum</h4>
-                                                                    <input maxlength="10"
-                                                                        onkeypress="return onlyNumberKey(event)"
-                                                                        type="text" name="min_price"
-                                                                        class="all_tabs" id="minimum_sqft2"
-                                                                        placeholder="Minimum Price">
-                                                                </div>
-                                                                <div>
-                                                                    <h4>Maximum</h4>
-                                                                    <input maxlength="10"
-                                                                        onkeypress="return onlyNumberKey(event)"
-                                                                        type="text" name="max_price"
-                                                                        class="all_tabs" id="maximum_sqft2"
-                                                                        placeholder="Maximum Price">
-                                                                </div>
-                                                                <div class="reset_form_tabs reset_form_tabs_area">
-                                                                    <button type="button" id="reset_price"
-                                                                        aria-label="Reset">Reset</button>
-                                                                    <button type="button" id="done_price"
-                                                                        class="active" aria-label="Done">Done</button>
-                                                                </div>
+                                                            <div class="reset_form_tabs">
+                                                               <button type="button" id="reset_pt"
+                                                                  aria-label="Reset">Reset
+                                                               </button>
+                                                               <button type="button" id="done_pt"
+                                                                  class="active"
+                                                                  aria-label="Done">Done
+                                                               </button>
                                                             </div>
-                                                        </div>
-                                                        <div class="Find_button">
-                                                            <button type="submit">Find</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ch_box">
-                                                        <input value="1" name="verified" type="checkbox"
-                                                            id="verified">
-                                                        <label for="verified" id="verified">check for verified
-                                                            property</label><br>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="bayut_row_two">
+                                                   <div class="beds_baths_one_parant">
+                                                      <div class="form_rent">
+                                                         <div class="dclick" id="bedsMain">
+                                                            <h3><span id="bedsMainTitle">Beds</span> &amp;
+                                                               <span id="bathsMainTitle">Baths</span>
+                                                            </h3>
+                                                            <span>
+                                                               <svg xmlns="http://www.w3.org/2000/svg"
+                                                                  viewBox="0 0 12 6"
+                                                                  class="eedc221b FilterDesign2022">
+                                                                  <path class="cls-1" d="M12 6L6 0 0 6h12z">
+                                                                  </path>
+                                                               </svg>
+                                                            </span>
+                                                         </div>
+                                                         <div
+                                                            class="beds_form_content bedzbaths dclick_content">
+                                                            <input type="hidden" name="beds"
+                                                               id="s_beds">
+                                                            <input type="hidden" name="baths"
+                                                               id="s_baths">
+                                                            <div>
+                                                               <div class="beds_form_title">
+                                                                  <h4 class="form_title">Beds</h4>
+                                                                  <div id="Beds"
+                                                                     class="Beds_fq_form_tabs all_tabs">
+                                                                     <button class="bedsBtn"
+                                                                        type="button">Studio
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">1
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">2
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">3
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">4
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">5
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">6
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">7
+                                                                     </button>
+                                                                     <button class="bedsBtn"
+                                                                        type="button">8+
+                                                                     </button>
+                                                                  </div>
+                                                                  <h4 class="form_title">Baths</h4>
+                                                                  <div id="Baths"
+                                                                     class="Baths_fq_form_tabs all_tabs">
+                                                                     <button class="bathsBtn"
+                                                                        type="button">1
+                                                                     </button>
+                                                                     <button class="bathsBtn"
+                                                                        type="button">2
+                                                                     </button>
+                                                                     <button class="bathsBtn"
+                                                                        type="button">3
+                                                                     </button>
+                                                                     <button class="bathsBtn"
+                                                                        type="button">4
+                                                                     </button>
+                                                                     <button class="bathsBtn"
+                                                                        type="button">5
+                                                                     </button>
+                                                                     <button class="bathsBtn"
+                                                                        type="button">6+
+                                                                     </button>
+                                                                  </div>
+                                                                  <div class="reset_form_tabs">
+                                                                     <button type="button" id="reset_beds"
+                                                                        aria-label="Reset">Reset
+                                                                     </button>
+                                                                     <button type="button" id="done_beds"
+                                                                        class="active"
+                                                                        aria-label="Done">Done
+                                                                     </button>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="area_two_parant">
+                                                      <div class="dclick" id="areaMain">
+                                                         <h3 id="areaMainTitle">Area(sqft)</h3>
+                                                         <span>
+                                                            <svg
+                                                               xmlns="http://www.w3.org/2000/svg"
+                                                               viewBox="0 0 12 6"
+                                                               class="eedc221b FilterDesign2022">
+                                                               <path class="cls-1" d="M12 6L6 0 0 6h12z">
+                                                               </path>
+                                                            </svg>
+                                                         </span>
+                                                      </div>
+                                                      <div class="area_form_content dclick_content ">
+                                                         <div>
+                                                            <h4>Minimum sqft</h4>
+                                                            <input onkeypress="return onlyNumberKey(event)"
+                                                               type="text" maxlength="5" name="min_area"
+                                                               class="all_tabs" id="minimumsqft"
+                                                               placeholder="Minimum sqft">
+                                                         </div>
+                                                         <div>
+                                                            <h4>Maximum sqft</h4>
+                                                            <input onkeypress="return onlyNumberKey(event)"
+                                                               type="text" maxlength="5" name="max_area"
+                                                               class="all_tabs" id="maximum_sqft"
+                                                               placeholder="Maximum sqft">
+                                                         </div>
+                                                         <div class="reset_form_tabs reset_form_tabs_area">
+                                                            <button type="button" id="reset_area"
+                                                               aria-label="Reset">Reset
+                                                            </button>
+                                                            <button type="button" id="done_area"
+                                                               class="active" aria-label="Done">Done
+                                                            </button>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="area_three_parant">
+                                                      <div class="dclick" id="priceMain">
+                                                         <h3 id="priceMainTitle">Price (AED)</h3>
+                                                         <span>
+                                                            <svg
+                                                               xmlns="http://www.w3.org/2000/svg"
+                                                               viewBox="0 0 12 6"
+                                                               class="eedc221b FilterDesign2022">
+                                                               <path class="cls-1" d="M12 6L6 0 0 6h12z">
+                                                               </path>
+                                                            </svg>
+                                                         </span>
+                                                      </div>
+                                                      <div class="price_form_content dclick_content">
+                                                         <div>
+                                                            <h4>Minimum</h4>
+                                                            <input maxlength="10"
+                                                               onkeypress="return onlyNumberKey(event)"
+                                                               type="text" name="min_price"
+                                                               class="all_tabs" id="minimum_sqft2"
+                                                               placeholder="Minimum Price">
+                                                         </div>
+                                                         <div>
+                                                            <h4>Maximum</h4>
+                                                            <input maxlength="10"
+                                                               onkeypress="return onlyNumberKey(event)"
+                                                               type="text" name="max_price"
+                                                               class="all_tabs" id="maximum_sqft2"
+                                                               placeholder="Maximum Price">
+                                                         </div>
+                                                         <div class="reset_form_tabs reset_form_tabs_area">
+                                                            <button type="button" id="reset_price"
+                                                               aria-label="Reset">Reset
+                                                            </button>
+                                                            <button type="button" id="done_price"
+                                                               class="active" aria-label="Done">Done
+                                                            </button>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="Find_button">
+                                                      <button type="submit"><a href="search-results-home.html" target="blank"> Find</a></button>
+                                                   </div>
+                                                </div>
+                                                <div class="ch_box">
+                                                   <input value="1" name="verified" type="checkbox"
+                                                      id="verified">
+                                                   <label for="verified" id="verified">check for verified
+                                                   property</label><br>
+                                                </div>
+                                             </form>
+                                          </div>
+                                       </div>
                                     </div>
-                                </div>
-                            </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-</div>
+         </div>
 
 <section id="feature-property" class="feature-property dn bgc-f7">
     <div class="container db-992">
@@ -1366,7 +1405,9 @@
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 
     </div>
+
         <script>window.APP_URL = 'index.html';</script>
+        <script src="close.js"></script>
 <script type="text/javascript" src="assets/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="assets/js/popper.min.js"></script>
