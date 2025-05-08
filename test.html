@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Apartment Listing</title>
+    <style>
+      /* main gallery section */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f8f8f8;
+      }
+
+      .outer-wrapper {
+        background-color: #f4f4f4;
+
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .gallery-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+        padding: 20px 0;
+      }
+
+      .main-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .thumbnail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 10px;
+      }
+
+      .thumbnail-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .thumbnail-wrapper {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .thumbnail-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(0.6);
+      }
+
+      .overlay-plus {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 40px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 1001;
+        user-select: none;
+      }
+
+      .nav-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .prev-arrow {
+        left: 20px;
+      }
+
+      .next-arrow {
+        right: 20px;
+      }
+
+      .counter {
+        color: white;
+        margin-top: 10px;
+      }
+
+      .info-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px; /* Optional */
+      }
+
+      .right-text {
+        text-align: right;
+      }
+
+      .overview-grid p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0;
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .value {
+        text-align: right;
+        min-width: 120px;
+        color: #777777 !important;
+        font-size: 12px;
+        font-weight: 500 !important;
+      }
+      @media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnail-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .nav-arrow {
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .overlay-plus {
+    font-size: 24px;
+  }
+
+  .info-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .overview-grid p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value {
+    text-align: left;
+    margin-top: 4px;
+  }
+}
+      /* new details */
+
+      .property-header {
+        max-width: 1350px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        background: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .property-icons-row {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #eee;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 1350px;
+        margin: 20px auto;
+      }
+
+      .icon-box {
+        flex: 1;
+        min-width: 150px;
+      }
+
+      .icon-main {
+        font-size: 30px;
+        margin-bottom: 12px;
+        color: #000;
+      }
+
+      .icon-main i {
+        margin-right: 5px;
+      }
+
+      .icon-label {
+        font-size: 0.85em;
+        color: #666;
+      }
+
+      .info-box {
+        flex: 1;
+        min-width: 150px;
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .info-value {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #111;
+      }
+
+      .info-label {
+        font-size: 0.85em;
+        color: #666;
+      }
+
+      .property-title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+      }
+
+      .left-title {
+        flex: 1;
+      }
+
+      .highlighted-title {
+        background-color: #328f95;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .location-line {
+        color: #444;
+        font-size: 0.95em;
+      }
+
+      .location-line i {
+        color: #000;
+        margin-right: 5px;
+      }
+
+      .right-price {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #000;
+        white-space: nowrap;
+        margin-left: 20px;
+      }
+
+      .box-section {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+
+      .left-column {
+        flex: 0 0 63%;
+        max-width: 63%;
+        padding: 20px;
+        border-radius: 8px;
+        /* background-color: #fff; */
+      }
+      .des {
+        border: 1px solid #ccc;
+      }
+
+      .right-column {
+        flex: 0 0 35%;
+        max-width: 35%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ccc; 
+        height: 450px;
+      }
+
+      .property-details {
+        list-style: none;
+        padding: 0;
+      }
+
+      .property-details li {
+        color: #777;
+        margin-bottom: 6px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form input,
+      form select {
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .captcha-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      button {
+        background-color: #328f95;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #3aa6ae;
+      }
+      @media (max-width: 768px) {
+  .property-icons-row {
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .icon-box,
+  .info-box {
+    min-width: 100px;
+  }
+
+  .property-title-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right-price {
+    font-size: 1.2em;
+    margin-left: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .left-column{
+    max-width: 100%;
+    padding: 0;
+  }
+  .right-column {
+    max-width: 100%;
+   
+  }
+
+  .highlighted-title {
+    font-size: 0.9em;
+  }
+
+  .location-line {
+    font-size: 0.8em;
+  }
+
+  .info-value {
+    font-size: 1em;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
+      /* new one  */
+
+      .features-section {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+      }
+
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #111;
+      }
+
+      .feature-category {
+        margin-bottom: 25px;
+      }
+
+      .category-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #111;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px 20px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #0a87c2;
+      }
+
+      .feature-item input[type="checkbox"] {
+        accent-color: #0a87c2;
+        margin-right: 8px;
+      }
+
+      .details-section {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        border-radius: 6px;
+    
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px 30px;
+        margin-top: 15px;
+      }
+
+      .details-row {
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .label {
+        font-weight: 500;
+        color: #444;
+      }
+
+      .value {
+        font-weight: 600;
+        color: #111;
+      }
+
+      /* calculatore */
+
+      .mortgage-section {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        background-color: #fff;
+      }
+
+      .mortgage-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+
+      .mortgage-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .mortgage-left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mortgage-circle {
+        width: 200px;
+        height: 200px;
+        border: 15px solid #ff6e8c;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mortgage-amount {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .mortgage-monthly {
+        font-size: 14px;
+        color: #444;
+        margin-top: 5px;
+      }
+
+      .mortgage-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 30px;
+      }
+
+      .mortgage-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mortgage-label {
+        font-weight: 600;
+        margin-left: 5px;
+      }
+
+      .mortgage-value {
+        font-weight: 500;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .dot-gray {
+        background-color: #dcdcdc;
+      }
+
+      .dot-lightgray {
+        background-color: #f5f5f5;
+        border: 1px solid #dcdcdc;
+      }
+
+      .dot-pink {
+        background-color: #ff6e8c;
+      }
+
+      .mortgage-inputs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .input-box {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .input-box .addon {
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+      }
+
+      .input-box input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+      }
+
+      /* new listing  */
+
+      .listing-container {
+        max-width: 800px;
+        margin: auto;
+      }
+      .listing-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .card {
+        display: flex;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin: 10px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .card img {
+        width: 250px;
+        height: 180px;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 10px;
+        flex: 1;
+        font-size: 14px;
+      }
+      .card-title {
+        font-size: 16px;
+        font-weight: bold;
+        max-width: 370px;
+      }
+      .card-details {
+        margin: 8px 0;
+        color: #555;
+      }
+      .price {
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+      }
+      .details-button {
+    background-color: #328f95;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+.details-button:hover {
+    background-color: #3e9fa6;
+}
+@media (max-width: 768px) {
+  .listing-container {
+    padding: 5px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card img {
+    width: 100%;
+    /* height: auto; */
+  }
+
+  .card-content {
+    text-align: center;
+    padding: 6px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .card-details {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 14px;
+    top: 5px;
+    right: 8px;
+    padding: 3px 6px;
+  }
+
+  .details-button {
+    padding: 4px 6px;
+    font-size: 12px;
+    bottom: 5px;
+    right: 8px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div style="max-width: 1400px; margin: 0 auto; padding: 20px">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+        "
+      >
+        <!-- Left Side: Text Description -->
+        <div
+          style="
+            flex: 1;
+            font-size: 14px;
+            color: #007b8a;
+            line-height: 1.5;
+            word-wrap: break-word;
+            text-align: left;
+            padding-right: 20px;
+            max-width: 1000px;
+          "
+        >
+          <a href="#" style="text-decoration: none; color: #007b8a">Home</a> / 2
+          Beds | 2 Baths | Fully Furnished | Spacious | Apartment | For Sale |
+          Balcony | Sea View | Modern Design | Near Metro | High Floor | Great
+          Investment | Parking Included
+        </div>
+
+        <!-- Right Side: Icons -->
+        <div
+          style="
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 10px;
+          "
+        >
+          <!-- Favourite -->
+          <!-- <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <span
+              style="
+                cursor: pointer;
+                background-color: #e0e0e0;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="assets/images/share.png"
+                alt="share"
+                style="width: 17px"
+              />
+            </span>
+            <span style="font-size: 12px; margin-top: 4px">Share</span>
+          </div> -->
+
+          <!-- Share -->
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <span
+              style="
+                cursor: pointer;
+                /* background-color: #e0e0e0; */
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="images/Frame 1321315327.png"
+                alt="fav"
+                style="width: 25px"
+              />
+            </span>
+            <span style="font-size: 12px; margin-top: 4px">Share</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Your Existing Code Below -->
+    <div class="outer-wrapper">
+      <div class="gallery-container">
+        <img
+          src="https://picsum.photos/id/1015/800/600"
+          class="main-image"
+          onclick="openModal(0)"
+          alt="Main Image"
+        />
+        <div class="thumbnail-grid">
+          <img
+            src="https://picsum.photos/id/1027/200/150"
+            onclick="openModal(1)"
+          />
+          <img
+            src="https://picsum.photos/id/1035/200/150"
+            onclick="openModal(2)"
+          />
+          <img
+            src="https://picsum.photos/id/1043/200/150"
+            onclick="openModal(3)"
+          />
+          <img
+            src="https://picsum.photos/id/1069/200/150"
+            onclick="openModal(4)"
+          />
+          <img
+            src="https://picsum.photos/id/1074/200/150"
+            onclick="openModal(5)"
+          />
+          <div class="thumbnail-wrapper" onclick="openModal(6)">
+            <img src="https://picsum.photos/id/1084/200/150" alt="More" />
+            <div class="overlay-plus">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close" onclick="closeModal()">✖</span>
+      <span class="nav-arrow prev-arrow" onclick="changeImage(-1)">❮</span>
+      <span class="nav-arrow next-arrow" onclick="changeImage(1)">❯</span>
+      <img id="lightboxImg" src="" alt="Lightbox Image" />
+      <div class="counter" id="counter">1 of 7</div>
+    </div>
+
+    <!-- new section -->
+
+    <div class="property-header">
+      <div class="property-icons-row">
+        <div class="icon-box">
+          <div class="icon-main">
+            <strong>zeq-3gtj</strong>
+          </div>
+          <div class="icon-label">Property ID</div>
+        </div>
+
+        <div class="icon-box">
+          <div class="icon-main">
+            <i class="fa fa-bed"></i> <strong>Studio</strong>
+          </div>
+          <div class="icon-label">Bedrooms</div>
+        </div>
+
+        <div class="icon-box">
+          <div class="icon-main">
+            <i class="fa fa-bath"></i> <strong>1</strong>
+          </div>
+          <div class="icon-label">Bathrooms</div>
+        </div>
+
+        <div class="icon-box">
+          <div class="icon-main">
+            <i class="fa fa-chart-area"></i> <strong>387</strong>
+          </div>
+          <div class="icon-label">Area (Sqft)</div>
+        </div>
+      </div>
+
+      <div class="property-title-row">
+        <div class="left-title">
+          <div class="highlighted-title">
+            1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio
+            Apartment for sale
+          </div>
+          <div class="location-line">
+            <i class="fa fa-map-marker-alt"></i> Millennium Binghatti
+            Residences, Business Bay, Dubai
+          </div>
+        </div>
+        <div class="right-price">AED 1,500,000</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-column">
+        <section class="des box-section">
+          <h2>Description</h2>
+          <p>
+            Elevate your lifestyle to new heights with Lux Realty’s latest
+            offering – an exquisite 1-bedroom apartment...
+          </p>
+          <ul class="property-details">
+            <li>1 Bed</li>
+            <li>1 Bath</li>
+            <li>Kitchen</li>
+            <li>Spacious</li>
+            <li>Bright</li>
+            <li>Unfurnished</li>
+            <li>Good View</li>
+            <li>Binghatti Residence</li>
+          </ul>
+          <p>
+            Lux Realty LLC possesses an intimate understanding of Dubai’s real
+            estate market trends...
+          </p>
+        </section>
+
+        <div class="features-section box-section">
+          <h2 class="section-title">Features / Amenities</h2>
+
+          <div class="feature-category">
+            <h3 class="category-title">Recreation and Family</h3>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Kids Play Area
+              </div>
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Lawn or Garden
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-category">
+            <h3 class="category-title">Health and Fitness</h3>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Gym or Health Club
+              </div>
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Swimming Pool
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-category">
+            <h3 class="category-title">Building</h3>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Balcony or Terrace
+              </div>
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Lobby in Building
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-category">
+            <h3 class="category-title">Miscellaneous</h3>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Freehold
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-category">
+            <h3 class="category-title">Features</h3>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Centrally
+                Air-Conditioned
+              </div>
+              <div class="feature-item">
+                <input type="checkbox" checked disabled /> Central Heating
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="details-section box-section">
+          <h2 class="section-title">Details</h2>
+          <div class="details-grid">
+            <div class="details-row">
+              <span class="label">Bedroom:</span>
+              <span class="value">Studio</span>
+            </div>
+            <div class="details-row">
+              <span class="label">Bathrooms:</span> <span class="value">1</span>
+            </div>
+            <div class="details-row">
+              <span class="label">Purpose:</span> <span class="value">Buy</span>
+            </div>
+            <div class="details-row">
+              <span class="label">Property type :</span>
+              <span class="value">Apartment</span>
+            </div>
+            <div class="details-row">
+              <span class="label">Verified property:</span>
+              <span class="value">Unverified</span>
+            </div>
+            <div class="details-row">
+              <span class="label">Ownership Status :</span>
+              <span class="value">Freehold</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- calcultaor section -->
+        <div class="mortgage-section">
+          <h2 class="mortgage-title">Mortgage Calculator</h2>
+          <div class="mortgage-body">
+            <div class="mortgage-left">
+              <div class="mortgage-circle">
+                <div class="mortgage-amount">AED5,219.64</div>
+                <div class="mortgage-monthly">Monthly</div>
+              </div>
+            </div>
+            <div class="mortgage-right">
+              <div class="mortgage-item">
+                <span class="dot dot-gray"></span>
+                <span class="mortgage-label">Down Payment</span>
+                <span class="mortgage-value">AED600,000.00</span>
+              </div>
+              <div class="mortgage-item">
+                <span class="dot dot-lightgray"></span>
+                <span class="mortgage-label">Loan Amount</span>
+                <span class="mortgage-value">AED900,000.00</span>
+              </div>
+              <div class="mortgage-item">
+                <span class="dot dot-pink"></span>
+                <span class="mortgage-label">Monthly Payment</span>
+                <span class="mortgage-value">AED5,219.64</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mortgage-inputs">
+            <div class="input-group">
+              <label>Total Amount</label>
+              <div class="input-box">
+                <span class="addon">AED</span>
+                <input type="text" value="1500000" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Down Payment</label>
+              <div class="input-box">
+                <span class="addon">%</span>
+                <input type="text" value="40" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Interest Rate</label>
+              <div class="input-box">
+                <span class="addon">%</span>
+                <input type="text" value="3.5" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Loan Terms (Years)</label>
+              <div class="input-box">
+                <span class="addon">&#128197;</span>
+                <input type="text" value="20" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- new listing -->
+        <div class="listing-container">
+          <div class="listing-title">Similar Listings</div>
+
+          <div class="card">
+            <img src="images/listing_108885275.jpeg" alt="2-Bedroom Apartment" />
+            <div class="card-content">
+              <div class="card-title">
+                Elegant 2-Bedroom Apartment in Burj Khalifa for Sale
+              </div>
+              <div class="card-details">
+                Apartment | 2 Beds | 2 Baths | Area: 1,639 sqft
+              </div>
+              <div class="card-details">
+                Burj Khalifa, Downtown Dubai, Dubai
+              </div>
+              <span class="price">AED 4,900,000</span>
+              <button class="details-button">Details</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="images/listing_108885275.jpeg" alt="4-Bedroom Apartment" />
+            <div class="card-content">
+              <div class="card-title">
+                Ultra-Luxurious 4-Bedroom Apartment in Burj Khalifa For Sale
+              </div>
+              <div class="card-details">
+                Apartment | 4 Beds | 4 Baths | Area: 7,161 sqft
+              </div>
+              <div class="card-details">
+                Burj Khalifa, Downtown Dubai, Dubai
+              </div>
+              <span class="price">AED 10,000,000</span>
+              <button class="details-button">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <h3>Make an Enquiry</h3>
+        <form>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Phone" />
+          <input type="email" placeholder="Email" />
+          <select>
+            <option>I'm a Tenant</option>
+            <option>I'm a Buyer</option>
+            <option>I'm an Investor</option>
+          </select>
+          <div class="captcha-box">
+            <input type="checkbox" id="not-robot" />
+            <label for="not-robot">I'm not a robot</label>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- new listing -->
+
+    <script>
+      const galleryImages = [
+        "https://picsum.photos/id/1015/800/600",
+        "https://picsum.photos/id/1027/800/600",
+        "https://picsum.photos/id/1035/800/600",
+        "https://picsum.photos/id/1043/800/600",
+        "https://picsum.photos/id/1069/800/600",
+        "https://picsum.photos/id/1074/800/600",
+        "https://picsum.photos/id/1084/800/600",
+      ];
+
+      let currentImage = 0;
+
+      function openModal(index) {
+        currentImage = index;
+        document.getElementById("lightbox").style.display = "flex";
+        showImage();
+      }
+
+      function closeModal() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+
+      function showImage() {
+        const img = document.getElementById("lightboxImg");
+        const counter = document.getElementById("counter");
+        img.src = galleryImages[currentImage];
+        counter.textContent = `${currentImage + 1} of ${galleryImages.length}`;
+      }
+
+      function changeImage(step) {
+        currentImage += step;
+
+        if (currentImage < 0) {
+          currentImage = galleryImages.length - 1;
+        } else if (currentImage >= galleryImages.length) {
+          currentImage = 0;
+        }
+
+        showImage();
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </body>
+</html>

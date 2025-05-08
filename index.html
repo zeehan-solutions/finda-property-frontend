@@ -11,6 +11,11 @@
       <title>Find a Property</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="images/fav.png">
+      <style>
+         .Residential_form_tabs button.active{
+            color: #328f95 !important;
+         }
+      </style>
       
    </head>
    <body>
@@ -629,8 +634,7 @@
                </div>
             </div>
          </div>
-		
-		
+
 		
 		
 		
@@ -739,143 +743,211 @@
                                  <div class="row home-feature-box justify-content-center"
                                     id="listing-container-1">
                                     <div class="col-md-6 col-lg-4">
-                                       <div data-listing-id="zeq-3gtj" data-listing-img="storage/listings/listing_947393366.jpg"
-                                          data-listing-price="1500000" data-listing-title="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale"
-                                          class="feat_property feat_property_cus home7 style4">
-                                          <div class="thumb">
+                                       <div id="property-card" class="feat_property feat_property_cus home7 style4" 
+                                            onclick="openPropertyDetail(event)">
+                                           <div data-listing-id="zeq-3gtj" data-listing-img="storage/listings/listing_947393366.jpg"
+                                               data-listing-price="1500000" data-listing-title="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                               <div class="thumb">
+                                                   <img class="low-opacity img-whp view-property image-fix-box"
+                                                       src="storage/listings/listing_947393366.jpg" alt="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                                   <div class="thmb_cntnt style2">
+                                                       <ul class="tag mb0 d-flex justify-content-inline gap-3">
+                                                           <li class="list-inline-item">Featured</li>
+                                                       </ul>
+                                                   </div>
+                                                   <div class="thmb_cntnt style3">
+                                                       <span class="fp_price">AED 1,500,000</span>
+                                                   </div>
+                                               </div>
+                                               <div class="details">
+                                                   <div class="tc_content view-property">
+                                                       <p class="text-thm">Apartment</p>
+                                                       <h4>1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale</h4>
+                                                       <p><span class="flaticon-placeholder"></span>
+                                                           Millennium Binghatti Residences, Business Bay, Dubai
+                                                       </p>
+                                                   </div>
+                                                   <div class="fp_footer">
+                                                       <div class="row">
+                                                           <div class="col-md-6">
+                                                               <a href="mailto:info@realestate.com" 
+                                                                  onclick="event.stopPropagation();" 
+                                                                  class="property-email-btn btn btn-block theme-btn">
+                                                                   <i class="fa fa-envelope-o"></i> Email
+                                                               </a>
+                                                           </div>
+                                                           <div class="col-md-6">
+                                                               <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20this%20property" 
+                                                                  target="_blank" 
+                                                                  onclick="event.stopPropagation();" 
+                                                                  class="btn btn-block theme-btn">
+                                                                   <i class="fa fa-whatsapp"></i> Whatsapp
+                                                               </a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   
+                                       <!-- JavaScript to Force Override Link -->
+                                       <script>
+                                           function openPropertyDetail(event) {
+                                               event.preventDefault(); // Stop any default link action
+                                               event.stopPropagation(); // Stop any propagation to child elements
+                                               window.location.href = "propertydetail.html"; // Redirect to the desired page
+                                           }
+                                   
+                                           // Prevent any link within the card from overriding
+                                           document.querySelectorAll('.feat_property a').forEach(link => {
+                                               link.addEventListener('click', function(e) {
+                                                   e.stopPropagation();
+                                               });
+                                           });
+                                       </script>
+                                   </div>
+                                   
+                                   <!-- second cards -->
+
+                                   <div class="col-md-6 col-lg-4">
+                                    <div id="property-card" class="feat_property feat_property_cus home7 style4" 
+                                         onclick="openPropertyDetail(event)">
+                                        <div data-listing-id="zeq-3gtj" data-listing-img="storage/listings/listing_947393366.jpg"
+                                            data-listing-price="1500000" data-listing-title="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                            <div class="thumb">
+                                                <img class="low-opacity img-whp view-property image-fix-box"
+                                                src="storage/listings/listing_117418539.jpg" alt="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                                <div class="thmb_cntnt style2">
+                                                    <ul class="tag mb0 d-flex justify-content-inline gap-3">
+                                                        <li class="list-inline-item">Featured</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="thmb_cntnt style3">
+                                                    <span class="fp_price">AED 1,500,000</span>
+                                                </div>
+                                            </div>
+                                            <div class="details">
+                                                <div class="tc_content view-property">
+                                                    <p class="text-thm">Apartment</p>
+                                                    <h4>1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale</h4>
+                                                    <p><span class="flaticon-placeholder"></span>
+                                                        Millennium Binghatti Residences, Business Bay, Dubai
+                                                    </p>
+                                                </div>
+                                                <div class="fp_footer">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <a href="mailto:info@realestate.com" 
+                                                               onclick="event.stopPropagation();" 
+                                                               class="property-email-btn btn btn-block theme-btn">
+                                                                <i class="fa fa-envelope-o"></i> Email
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20this%20property" 
+                                                               target="_blank" 
+                                                               onclick="event.stopPropagation();" 
+                                                               class="btn btn-block theme-btn">
+                                                                <i class="fa fa-whatsapp"></i> Whatsapp
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- JavaScript to Force Override Link -->
+                                    <script>
+                                        function openPropertyDetail(event) {
+                                            event.preventDefault(); // Stop any default link action
+                                            event.stopPropagation(); // Stop any propagation to child elements
+                                            window.location.href = "propertydetail.html"; // Redirect to the desired page
+                                        }
+                                
+                                        // Prevent any link within the card from overriding
+                                        document.querySelectorAll('.feat_property a').forEach(link => {
+                                            link.addEventListener('click', function(e) {
+                                                e.stopPropagation();
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                    
+                                <!-- third card -->
+
+                                <div class="col-md-6 col-lg-4">
+                                 <div id="property-card" class="feat_property feat_property_cus home7 style4" 
+                                      onclick="openPropertyDetail(event)">
+                                     <div data-listing-id="zeq-3gtj" data-listing-img="storage/listings/listing_947393366.jpg"
+                                         data-listing-price="1500000" data-listing-title="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                         <div class="thumb">
                                              <img class="low-opacity img-whp view-property image-fix-box"
-                                                src="storage/listings/listing_947393366.jpg" alt="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
+                                             src="storage/listings/listing_929993638.jpg"  alt="1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale">
                                              <div class="thmb_cntnt style2">
-                                                <ul class="tag mb0 d-flex justify-content-inline gap-3">
-                                                   <li class="list-inline-item">Featured</li>
-                                                 
-                                                </ul>
+                                                 <ul class="tag mb0 d-flex justify-content-inline gap-3">
+                                                     <li class="list-inline-item">Featured</li>
+                                                 </ul>
                                              </div>
                                              <div class="thmb_cntnt style3">
-                                                <a class="fp_price">AED
-                                                1,500,000
-                                                </a>
+                                                 <span class="fp_price">AED 1,500,000</span>
                                              </div>
-                                          </div>
-                                          <div class="details">
+                                         </div>
+                                         <div class="details">
                                              <div class="tc_content view-property">
-                                                <p class="text-thm">Apartment</p>
-                                                <h4>1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale</h4>
-                                                <p><span class="flaticon-placeholder"></span>
-                                                   Millennium Binghatti Residences, Business Bay, Dubai
-                                                </p>
-												
+                                                 <p class="text-thm">Apartment</p>
+                                                 <h4>1 Bed | 1 Bath | Balcony | Bright | Good View | Chic Studio Apartment for sale</h4>
+                                                 <p><span class="flaticon-placeholder"></span>
+                                                     Millennium Binghatti Residences, Business Bay, Dubai
+                                                 </p>
                                              </div>
                                              <div class="fp_footer">
-                                                <div class="row">
-                                                   <div class="col-md-6">
-                                                      <a data-url="property/zeq-3gtj.html"
-                                                         class="property-email-btn btn btn-block theme-btn"><i class="fa fa-envelope-o"></i>
-                                                      Email</a>
-                                                   </div>
-                                                   <div class="col-md-6">
-                                                      <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20https://finda-property.com/property/zeq-3gtj"
-                                                         target="_blank" class="btn btn-block theme-btn"><i class="fa fa-whatsapp"></i>
-                                                      Whatsapp</a>
-                                                   </div>
-                                                </div>
+                                                 <div class="row">
+                                                     <div class="col-md-6">
+                                                         <a href="mailto:info@realestate.com" 
+                                                            onclick="event.stopPropagation();" 
+                                                            class="property-email-btn btn btn-block theme-btn">
+                                                             <i class="fa fa-envelope-o"></i> Email
+                                                         </a>
+                                                     </div>
+                                                     <div class="col-md-6">
+                                                         <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20this%20property" 
+                                                            target="_blank" 
+                                                            onclick="event.stopPropagation();" 
+                                                            class="btn btn-block theme-btn">
+                                                             <i class="fa fa-whatsapp"></i> Whatsapp
+                                                         </a>
+                                                     </div>
+                                                 </div>
                                              </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                       <div data-listing-id="xcd-46ffp" data-listing-img="storage/listings/listing_117418539.jpg"
-                                          data-listing-price="3100000" data-listing-title="LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI"
-                                          class="feat_property feat_property_cus home7 style4">
-                                          <div class="thumb">
-                                             <img class="low-opacity img-whp view-property image-fix-box"
-                                                src="storage/listings/listing_117418539.jpg" alt="LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI">
-                                             <div class="thmb_cntnt style2">
-                                                <ul class="tag mb0 d-flex justify-content-inline gap-3">
-                                                   <li class="list-inline-item">Featured</li>
-                                                </ul>
-                                             </div>
-                                             <div class="thmb_cntnt style3">
-                                                <a class="fp_price">AED
-                                                3,100,000
-                                                </a>
-                                             </div>
-                                          </div>
-                                          <div class="details">
-                                             <div class="tc_content view-property">
-                                                <p class="text-thm">Apartment</p>
-                                                <h4>LUXURIOUS APARTMENT | FOR SALE | 2BR UNFURNISHED | BEAUTIFUL GARDEN | DUBAI</h4>
-                                                <p><span class="flaticon-placeholder"></span>
-                                                   Mudon Views, Mudon, Emirates Road, Dubai
-                                                </p>
-                                             </div>
-                                             <div class="fp_footer">
-                                                <div class="row">
-                                                   <div class="col-md-6">
-                                                      <a data-url="property/xcd-46ffp.html"
-                                                         class="property-email-btn btn btn-block theme-btn"><i class="fa fa-envelope-o"></i>
-                                                      Email</a>
-                                                   </div>
-                                                   <div class="col-md-6">
-                                                      <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20https://finda-property.com/property/xcd-46ffp"
-                                                         target="_blank" class="btn btn-block theme-btn"><i class="fa fa-whatsapp"></i>
-                                                      Whatsapp</a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                       <div data-listing-id="bli-49qtl" data-listing-img="storage/listings/listing_929993638.jpg"
-                                          data-listing-price="2000000" data-listing-title="LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI"
-                                          class="feat_property feat_property_cus home7 style4">
-                                          <div class="thumb">
-                                             <img class="low-opacity img-whp view-property image-fix-box"
-                                                src="storage/listings/listing_929993638.jpg" alt="LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI">
-                                             <div class="thmb_cntnt style2">
-                                                <ul class="tag mb0 d-flex justify-content-inline gap-3">
-                                                   <li class="list-inline-item">Featured</li>
-                                                </ul>
-                                             </div>
-                                             <div class="thmb_cntnt style3">
-                                                <a class="fp_price">AED
-                                                2,000,000
-                                                </a>
-                                             </div>
-                                          </div>
-                                          <div class="details">
-                                             <div class="tc_content view-property">
-                                                <p class="text-thm">Apartment</p>
-                                                <h4>LUXURIOUS 1BR APARTMENT | FOR SALE | GOOD VIEW | DUBAI</h4>
-                                                <p><span class="flaticon-placeholder"></span>
-                                                   Damac Heights, Dubai Marina, Dubai
-                                                </p>
-                                             </div>
-                                             <div class="fp_footer">
-                                                <div class="row">
-                                                   <div class="col-md-6">
-                                                      <a data-url="property/bli-49qtl.html"
-                                                         class="property-email-btn btn btn-block theme-btn"><i class="fa fa-envelope-o"></i>
-                                                      Email</a>
-                                                   </div>
-                                                   <div class="col-md-6">
-                                                      <a href="https://wa.me/+971503879245?text=Hello,%20I%20am%20interested%20in%20https://finda-property.com/property/bli-49qtl"
-                                                         target="_blank" class="btn btn-block theme-btn"><i class="fa fa-whatsapp"></i>
-                                                      Whatsapp</a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             
+                                 <!-- JavaScript to Force Override Link -->
+                                 <script>
+                                     function openPropertyDetail(event) {
+                                         event.preventDefault(); // Stop any default link action
+                                         event.stopPropagation(); // Stop any propagation to child elements
+                                         window.location.href = "propertydetail.html"; // Redirect to the desired page
+                                     }
+                             
+                                     // Prevent any link within the card from overriding
+                                     document.querySelectorAll('.feat_property a').forEach(link => {
+                                         link.addEventListener('click', function(e) {
+                                             e.stopPropagation();
+                                         });
+                                     });
+                                 </script>
+                             </div>
+
+                                   
                                  </div>
                                  <div class="text-center mt-3">
-                                    <button class="btn theme-btn load-more-btn" data-city="1"
-                                       data-page="2">
-                                    Load More
-                                    </button>
-                                 </div>
+                                    <a href="search-results-home.html" class="btn theme-btn load-more-btn" data-city="1" data-page="2">
+                                        Load More
+                                    </a>
+                                </div>                            
                               </div>
                            </div>
                            <div class="tab-pane "
@@ -978,7 +1050,8 @@
                   <div class="col-lg-6 offset-lg-3">
                      <div class="main-title2 text-center mb30">
                         <h2>What are you looking for?</h2>
-                        <p class="sw">Find a Proprty has exclusive listings that are perfect for International Clients.</p>
+                        <p class="sw">Finda Property has exclusive listings that are 
+                           perfect for international clients.</p>
                      </div>
                   </div>
                </div>
@@ -1662,8 +1735,8 @@ negotiations and other services are included in the house price.</p>
                         <div class="cities-child4">
                            <div class="cities-child5"
                               style="background-image: url(storage/attributes/attribute_720984289.jpg);">
-                              <a href="search-results88dd.html?city=dubai"
-                                 class="grid-item-link hover-effect-flat">
+                              <!-- <a href="search-results88dd.html?city=dubai"
+                                 class="grid-item-link hover-effect-flat"> -->
                                  <div class="grid-item-text-wrap">
                                     <div class="grid-item-subtitle">152 Properties
                                     </div>
@@ -1685,8 +1758,8 @@ negotiations and other services are included in the house price.</p>
                         <div class="cities-child4">
                            <div class="cities-child5"
                               style="background-image: url(storage/attributes/attribute_333033856.jpg);">
-                              <a href="search-results4e72.html?city=sharjah"
-                                 class="grid-item-link hover-effect-flat">
+                              <!-- <a href="search-results4e72.html?city=sharjah"
+                                 class="grid-item-link hover-effect-flat"> -->
                                  <div class="grid-item-text-wrap">
                                     <div class="grid-item-subtitle">3 Properties
                                     </div>
@@ -1708,8 +1781,8 @@ negotiations and other services are included in the house price.</p>
                         <div class="cities-child4">
                            <div class="cities-child5"
                               style="background-image: url(storage/attributes/attribute_262506564.jpg);">
-                              <a href="search-resultsec5e.html?city=abu-dhabi"
-                                 class="grid-item-link hover-effect-flat">
+                              <!-- <a href="search-resultsec5e.html?city=abu-dhabi"
+                                 class="grid-item-link hover-effect-flat"> -->
                                  <div class="grid-item-text-wrap">
                                     <div class="grid-item-subtitle">1 Properties
                                     </div>
@@ -1731,8 +1804,8 @@ negotiations and other services are included in the house price.</p>
                         <div class="cities-child4">
                            <div class="cities-child5"
                               style="background-image: url(storage/attributes/attribute_951302784.jpg);">
-                              <a href="search-results3289.html?city=ajman"
-                                 class="grid-item-link hover-effect-flat">
+                              <!-- <a href="search-results3289.html?city=ajman"
+                                 class="grid-item-link hover-effect-flat"> -->
                                  <div class="grid-item-text-wrap">
                                     <div class="grid-item-subtitle">0 Properties
                                     </div>
@@ -1754,8 +1827,8 @@ negotiations and other services are included in the house price.</p>
                         <div class="cities-child4">
                            <div class="cities-child5"
                               style="background-image: url(storage/attributes/attribute_967848275.webp);">
-                              <a href="search-resultsa247.html?city=ras-al-khaimah"
-                                 class="grid-item-link hover-effect-flat">
+                              <!-- <a href="search-resultsa247.html?city=ras-al-khaimah"
+                                 class="grid-item-link hover-effect-flat"> -->
                                  <div class="grid-item-text-wrap">
                                     <div class="grid-item-subtitle">0 Properties
                                     </div>
@@ -1882,19 +1955,6 @@ negotiations and other services are included in the house price.</p>
                </div>
             </div>
          </section>
-		 
-		 
-		 
-		 
-		 
-		
-	
-	
-	
-	
-	
-	
-	
 		 
 		 
 		 
@@ -2069,7 +2129,7 @@ negotiations and other services are included in the house price.</p>
          </section>
          <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
       </div>
-
+      <script src="close.js"></script>
       <script>window.APP_URL = 'index.html';</script>
       <script type="text/javascript" src="assets/js/jquery-3.3.1.js"></script>
       <script type="text/javascript" src="assets/js/jquery-migrate-3.0.0.min.js"></script>
